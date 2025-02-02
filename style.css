@@ -1,0 +1,6 @@
+
+
+.is-focused .Select-control {
+    background-color: #ffcc80 !important;  /* White when selected */
+}
+

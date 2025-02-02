@@ -127,7 +127,7 @@ max_level = 11  # total number of levels
 level_columns = [f"prefLabelLaag{i}" for i in range(1, max_level+1)]
 
 # =============================================================================
-# Build the Dash App Layout
+# the Dash App Layout
 # =============================================================================
 app = dash.Dash(__name__)
 

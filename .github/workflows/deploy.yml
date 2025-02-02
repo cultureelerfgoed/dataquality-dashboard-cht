@@ -24,7 +24,7 @@ jobs:
 
       - name: Static HTML
         run: |
-          python app.py  
+          python kwaliteitsanalyse.py  
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

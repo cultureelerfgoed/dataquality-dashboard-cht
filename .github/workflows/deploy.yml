@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate Static HTML
         run: |
-          python kwaliteitsanalyse.py  # ✅ This now generates index.html
+          python kwaliteitsanalyse.py  
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

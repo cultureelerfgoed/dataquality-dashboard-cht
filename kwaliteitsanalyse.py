@@ -1,4 +1,9 @@
-import requests, json, pandas as pd # type: ignore
+import requests, json, pandas as pd
+import dash
+from dash import dcc, html, dash_table
+from dash.dependencies import Input, Output
+import pandas as pd
+import numpy as np
 
 
 def fetch_data(url):
@@ -112,12 +117,6 @@ filtered_df = merged_df[
 
 
 
-#try7
-import dash
-from dash import dcc, html, dash_table
-from dash.dependencies import Input, Output
-import pandas as pd
-import numpy as np
 
 
 
@@ -279,6 +278,11 @@ def update_data_table(*vals):
 # Run the App
 # =============================================================================
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
 
 
+app.scripts.config.serve_locally = True
+app.css.config.serve_locally = True
+
+with open("index.html", "w") as file:
+    file.write(app.index_string.replace("{app_entry}", app._repr_html_()))

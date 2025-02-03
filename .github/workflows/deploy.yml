@@ -1,9 +1,9 @@
-name: Dataquality dashboard cht
+name: Deploy Dash App to GitHub Pages
 
 on:
   push:
     branches:
-      - main  
+      - main  # Adjust branch name if necessary
 
 jobs:
   deploy:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Python
+      - name: Set up Python
         uses: actions/setup-python@v3
         with:
           python-version: "3.9"
@@ -22,12 +22,12 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Static HTML
+      - name: Generate Static HTML
         run: |
-          python kwaliteitsanalyse.py  
+          python kwaliteitsanalyse.py  # ✅ This now generates index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  
+          publish_dir: .  

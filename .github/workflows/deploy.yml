@@ -3,7 +3,7 @@ name: Deploy Dash App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Adjust branch name if necessary
+      - main  
 
 jobs:
   deploy:
